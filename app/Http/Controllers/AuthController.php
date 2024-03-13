@@ -60,7 +60,7 @@ class AuthController extends Controller
     $user->update(['active' => true]);
 
     
-        return '¡Se ha activado tu cuenta!';
+        return response()->json(['msg'=>"¡Se ha activado tu cuenta!"],200);
     }
 
     public function login(Request $request)

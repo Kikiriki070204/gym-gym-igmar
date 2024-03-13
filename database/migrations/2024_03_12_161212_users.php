@@ -23,6 +23,7 @@ return new class extends Migration
             $table->foreign('rol_id')->references('id')->on('roles')->onDelete('cascade');
             $table->boolean('active')->default(false);
             $table->boolean('verified')->default(false);
+            $table->string('verified_token')->nullable();
             $table->unsignedBigInteger('gimnasio_id')->nullable();
            $table->foreign('gimnasio_id')->references('id')->on('gimnasios')->onDelete('cascade');
             $table->rememberToken();
