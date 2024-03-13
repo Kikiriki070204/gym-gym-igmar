@@ -57,7 +57,7 @@ class AuthController extends Controller
             return response()->json(['msg'=>"Usuario no encontrado"],404);
         }
 
-    $user->update(['activated' => true]);
+    $user->update(['active' => true]);
 
     
         return '¡Se ha activado tu cuenta!';
