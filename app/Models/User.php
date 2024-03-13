@@ -10,6 +10,9 @@ use Laravel\Sanctum\HasApiTokens;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use App\Models\Rol;
 use App\Models\Gimnasio;
+use App\Models\Cita;
+use App\Models\Cliente;
+use App\Models\Empleado;
 
 class User extends Authenticatable implements JWTSubject
 {
@@ -65,5 +68,17 @@ class User extends Authenticatable implements JWTSubject
     public function gimnasio()
     {
         return $this->belongsTo(Gimnasio::class,'gimnasio_id');
+    }
+
+    public function cliente()
+    {
+        return $this->hasMany(Cliente::class,'user_id');
+        
+    }
+
+    public function empleado()
+    {
+        return $this->hasMany(Empleado::class,'user_id');
+        
     }
 }

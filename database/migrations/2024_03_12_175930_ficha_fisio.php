@@ -13,7 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('ficha_fisio', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('cita_id');
+            $table->foreign('cita_id')->references('id')->on('citas')->onDelete('cascade');
+            $table->decimal('peso', 5, 2)->nullable();
+            $table->decimal('altura', 3, 2)->nullable();
+            $table->text('observaciones')->nullable();
+            $table->text('motivo')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
