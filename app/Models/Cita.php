@@ -17,7 +17,9 @@ class Cita extends Model
     protected $fillable = ['
     cliente_id',
     'servicio_id',
-    'empleado_id'];
+    'empleado_id',
+    'fecha',
+    'hora'];
 
     public function cliente()
     {
