@@ -10,7 +10,7 @@ class Gimnasio extends Model
 {
     use HasFactory;
 
-    protected $table= ['gimnasios'];
+    protected $table= 'gimnasios';
 
     protected $fillable=['nombre','ubicacion'];
     

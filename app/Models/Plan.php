@@ -8,7 +8,7 @@ use App\Models\Cita;
 class Plan extends Model
 {
     use HasFactory;
-    protected $table= ['planes'];
+    protected $table= 'planes';
 
     protected $fillable=['nombre','precio','descripcion'];
 

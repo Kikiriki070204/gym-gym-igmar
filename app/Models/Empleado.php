@@ -11,7 +11,7 @@ use App\Models\Cita;
 class Empleado extends Model
 {
     use HasFactory;
-    protected $table = ['empleados'];
+    protected $table = 'empleados';
 
     protected $fillable =[
         'user_id',
@@ -22,12 +22,13 @@ class Empleado extends Model
     {
         return $this->belongsTo(User::class,'user_id');
     }
-    public function servicio()
-    {
-        return $this->belongsTo(Servicio::class,'servicio_id');
-    }
     public function cita()
     {
         return $this->hasMany(Cita::class,'empleado_id');
+    }
+
+    public function servicio()
+    {
+        return $this->belongsToMany(Servicio::class);
     }
 }

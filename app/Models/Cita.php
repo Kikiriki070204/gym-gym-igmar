@@ -13,9 +13,9 @@ class Cita extends Model
 {
     use HasFactory;
 
-    protected $table = ['citas'];
-    protected $fillable = ['
-    cliente_id',
+    protected $table = 'citas';
+    protected $fillable = [
+    'cliente_id',
     'servicio_id',
     'empleado_id',
     'fecha',

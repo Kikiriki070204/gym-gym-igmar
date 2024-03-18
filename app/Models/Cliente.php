@@ -11,7 +11,7 @@ class Cliente extends Model
 {
     use HasFactory;
 
-    protected $table = ['clientes'];
+    protected $table = 'clientes';
 
     protected $fillable =[
         'user_id',
@@ -26,7 +26,6 @@ class Cliente extends Model
     {
         return $this->belongsTo(Plan::class,'plan_id');
     }
-
     public function cita()
     {
         return $this->hasMany(Cita::class,'cliente_id');

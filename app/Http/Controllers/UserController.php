@@ -38,5 +38,19 @@ class UserController extends Controller
         $user->rol_id = $request->rol_id;
 
         $user->save();
+        return response()->json([ "msg"=>"Nuevo rol asignado!"],200);
+    }
+
+    public function profile(int $id)
+    {
+        $user = User::find($id);
+
+        if(!$user)
+        {
+            return response()->json([ "msg"=>"Persona no encontrada"],404);
+        }
+
+        return response()->json([ "usuario"=>$user],200);
+
     }
 }

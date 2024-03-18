@@ -123,6 +123,18 @@ class AuthController extends Controller
        }
        return response()->json([ "msg"=>"Persona no encontrada"],404);
     }
+    
+    public function logout(Request $request)
+    {
+        Auth::guard('api')->logout();
 
+        $user = $request->user();
 
+        if ($user) {
+            $user->update(['verified' => false]);
+        }
+
+        return response()->json(['message' => 'Logout exitoso'], 200);
+
+    }
 }
